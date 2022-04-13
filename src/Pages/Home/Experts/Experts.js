@@ -22,7 +22,7 @@ const Experts = () => {
            <h2 className='text-primary text-center'>Our experts</h2> 
            <div className="row mt-5 mb-5">
                {
-                   experts.map(expert => <Expert key={experts.id} expert = {expert}></Expert>)
+                   experts.map(expert => <Expert key={expert.id} expert = {expert}></Expert>)
                }
            </div>
         </div>
