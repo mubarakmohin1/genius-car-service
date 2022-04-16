@@ -28,7 +28,7 @@ const [agree,setAgree] = useState(false);
         navigate("/home");
     }
 
-    const handleSubmitRegister = async event => {
+    const handleSubmitRegister = async( event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
@@ -45,9 +45,9 @@ const [agree,setAgree] = useState(false);
                 <input type="text" name="name" id="" placeholder='Your Name' /> <br />
                 <input type="email" name="email" id="" placeholder='Email Address' required /> <br />
                 <input type="Password" name="password" id="" placeholder='Password' required /> <br />
-                <input type="checkbox" name="" id="terms" />
-                <label className={agree?"ps-2 text-primary":"ps-2 text-danger"} onClick={() =>setAgree(!agree)} htmlFor="terms">Accept Genius car Terms and condition </label>
-                <input disabled={!agree} type="submit" value="Register" />
+                <input onClick={() =>setAgree(!agree)} type="checkbox" name="terms" id="terms" />
+                <label className={agree?"ps-2 text-primary":"ps-2 text-danger"}  htmlFor="terms">Accept Genius car Terms and condition </label>
+                <input className='btn btn-primary' disabled={!agree} type="submit" value="Register" />
             </form>
             <p>Already Registered? <Link to={'/login'} className='text-danger pe-auto text-decoration-none' onClick={navigateLogin}>Please Login!</Link></p>
             <SocialLogin></SocialLogin>
